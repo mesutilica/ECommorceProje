@@ -1,0 +1,140 @@
+﻿@model HomePageViewModel
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="preloader-wrapper">
+      <div class="preloader">
+      </div>
+    </div>
+    <div class="search-popup">
+      <div class="search-popup-container">
+        <form role="search" method="get" class="search-form" action="">
+          <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value="" name="s" />
+          <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
+        </form>
+      </div>
+    </div>
+    @* Slider *@
+    @await Html.PartialAsync("_PartialSlide", Model.Slides)
+    <section id="featured-products" class="product-store padding-large">
+        <div class="container">
+            <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+                <h2 class="section-title">Popüler Ürünler</h2>
+                <div class="btn-wrap">
+                    <a href="/Products/Index" class="d-flex align-items-center">Tüm Ürünlere Git <i class="icon icon icon-arrow-io"></i></a>
+                </div>
+            </div>
+            <div class="swiper product-swiper overflow-hidden">
+                <div class="swiper-wrapper">
+    @await Html.PartialAsync("_PartialPopular", Model.Products)
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <hr>
+    <section id="instagram" class="padding-large">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Instagram'dan Takip Et</h2>
+        </div>
+            
+        
+        <div class="row d-flex flex-wrap justify-content-between">
+                
+          <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i  aria-hidden="true"></i>
+                   
+
+                    <figure class="zoom-effect">
+                        <img src="~/homepage/images/insta-image1.jpg" alt="instagram" class="insta-image">
+              <i class="icon icon-instagram"></i>
+                    </a>
+            </figure>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i aria-hidden="true"></i>
+                 
+            <figure class="zoom-effect">
+                        <img src="~/homepage/images/insta-image2.jpg" alt="instagram" class="insta-image">
+                            <i class="icon icon-instagram"></i>
+                    </a>                   
+            </figure>                  
+          </div>               
+          <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i aria-hidden="true"></i>
+            <figure class="zoom-effect">
+                        <img src="~/homepage/images/insta-image3.jpg" alt="instagram" class="insta-image">
+              <i class="icon icon-instagram"></i>
+                    </a>
+            </figure>
+          </div>                
+          <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i aria-hidden="true"></i>
+            <figure class="zoom-effect">
+                        <img src="~/homepage/images/insta-image4.jpg" alt="instagram" class="insta-image">
+              <i class="icon icon-instagram"></i>
+                    </a>
+            </figure>
+          </div>                
+          <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i aria-hidden="true"></i>
+            <figure class="zoom-effect">
+                        <img src="~/homepage/images/insta-image5.jpg" alt="instagram" class="insta-image">
+              <i class="icon icon-instagram"></i>
+                    </a>
+            </figure>
+          </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <a href="https://www.instagram.com">
+                        <i aria-hidden="true"></i>
+                        <figure class="zoom-effect">
+                            <img src="~/homepage/images/insta-image6.jpg" alt="instagram" class="insta-image">
+                            <i class="icon icon-instagram"></i>
+                    </a>
+                    </figure>
+                </div>
+        </div>          
+      </div>       
+    </section>
+
+    <section id="shipping-information">
+      <hr>
+      <div class="container">
+        <div class="row d-flex flex-wrap align-items-center justify-content-between">
+          <div class="col-md-3 col-sm-6">
+            <div class="icon-box">
+              <i class="icon icon-truck"></i>
+              <h4 class="block-title">
+                            <strong>Ücretsiz Gönderim</strong> 2.000 ₺ Üzerine
+              </h4>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="icon-box">
+              <i class="icon icon-return"></i>
+              <h4 class="block-title">
+                <strong>Para İadesi</strong> 7 Gün İçinde
+              </h4>
+            </div>
+          </div>
+          
+         
+        </div>
+      </div>
+      <hr>
+    </section>   
+
+    <script src="~/homepage/js/jquery-1.11.0.min.js"></script>
+    <script src="~/homepage/js/plugins.js"></script>
+    <script src="~/homepage/js/script.js"></script>
+  </body>
+</html>
